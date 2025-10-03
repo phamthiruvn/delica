@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>DELICA</title>
-        <link rel="icon" href="favicon.svg" type="image/x-icon">
+    <link rel="icon" href="favicon.svg" type="image/x-icon">
 
     <style>
         html,
@@ -14,9 +14,7 @@
             height: 100%;
             background: #ffffff;
             overflow: auto;
-            /* allow scroll/pan */ 
             cursor: url('cursor.svg') 16 16, auto;
-
         }
 
         .image-container {
@@ -29,7 +27,8 @@
             position: relative;
         }
 
-        img {
+        /* Main image */
+        .image-container img:not(.image-blur) {
             position: absolute;
             top: 0;
             width: 88%;
@@ -50,14 +49,32 @@
             filter: blur(5px);
             z-index: 0;
         }
+
+        /* Scrollbar toàn bộ trang */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ffe6f0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #cc1f36;
+            border-radius: 6px;
+            border: 3px solid #ffe6f0;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #ff1493;
+        }
     </style>
 </head>
 
 <body>
     <div class="image-container">
-        <img class="image-blur" src="delica.png" alt="Fullscreen Image">
-        <img src="delica.png" alt="Fullscreen Image">
-
+        <img class="image-blur" src="delica.png" alt="Blur Background">
+        <img src="delica.png" alt="Main Image">
     </div>
 </body>
 
