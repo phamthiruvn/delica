@@ -2,23 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Fullscreen Image</title>
+<title>Fullscreen Image with Scroll/Pan</title>
 <style>
   html, body {
     margin: 0;
     height: 100%;
-    background: #000;   /* black background */
-    overflow: auto;     /* enable scrolling */
+    background: #000;
+    overflow: auto; /* enable both scrollbars */
+  }
+  .image-container {
+    min-width: 100vw;
+    min-height: 100vh;
   }
   img {
     display: block;
-    max-width: 100%;    /* fit to screen width */
-    height: auto;       /* keep aspect ratio */
-    margin: 0 auto;     /* center horizontally */
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
   }
 </style>
 </head>
 <body>
-  <img src="delica.png" alt="Fullscreen Image">
+  <div class="image-container">
+    <img src="delica.png" alt="Fullscreen Image">
+  </div>
 </body>
 </html>
